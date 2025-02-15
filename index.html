@@ -1,10 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perspective - Médias Libres et Flux RSS</title>
+
+    <!-- Meta Tags -->
+    <meta name="description"
+          content="Découvrez une sélection de médias libres et indépendants, avec leurs flux RSS pour suivre l'actualité autrement.">
+    <meta name="keywords" content="médias libres, journalisme indépendant, RSS, flux RSS, actualités alternatives">
+    <meta name="author" content="Perspective">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (For Social Media Preview) -->
+    <meta property="og:title" content="Perspective - Médias Libres et Flux RSS">
+    <meta property="og:description"
+          content="Suivez l'actualité grâce aux médias libres et indépendants via leurs flux RSS.">
+    <meta property="og:image" content="https://www.example.com/image.jpg">
+    <meta property="og:url" content="https://www.example.com">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-$END$
+<header>
+    <img src="assets/images/logo_perspective.webp" alt="Perspective Logo" class="logo">
+    <h1>Perspectives</h1>
+    <h2>Médias Libres proposant un flux rss</h2>
+    <p>Suivez et explorez une liste de médias indépendants avec leurs flux RSS.</p>
+</header>
+<main>
+    <div class="container">
+        <ul class="media-list" id="mediaList">
+            <!-- Liste des médias chargée dynamiquement -->
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Perspective. Tous droits réservés.</p>
+    <a href="https://alphaomardiallo.com" target="_blank">alphaomardiallo.com</a>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const mediaData = [
+    { "name": "60 Millions de Consommateurs", "category": "Consumer Affairs", "website": "https://www.60millions-mag.com/", "rss": "https://www.60millions-mag.com/rss.xml" },
+    { "name": "Acrimed", "category": "Media Critique", "website": "https://www.acrimed.org/", "rss": "https://www.acrimed.org/spip.php?page=backend" },
+    { "name": "Afrique XXI", "category": "News & Current Affairs", "website": "https://afriquexxi.info/", "rss": "https://afriquexxi.info/?page=backend&lang=fr" },
+    { "name": "Alternatives Economiques", "category": "News & Current Affairs", "website": "https://www.alternatives-economiques.fr/", "rss": "https://www.alternatives-economiques.fr/rss.xml" },
+    { "name": "Arrêt sur images", "category": "Media Critique", "website": "https://www.arretsurimages.net/", "rss": "https://www.arretsurimages.net/rss" },
+    { "name": "Au Poste", "category": "Analysis & Commentary", "website": "https://www.auposte.fr/", "rss": "https://www.auposte.fr/feed" },
+    { "name": "Axelle Magazine", "category": "News & Current Affairs", "website": "https://www.axellemag.be/", "rss": "https://www.axellemag.be/feed/" },
+    { "name": "Ballast", "category": "Analysis & Commentary", "website": "https://www.revue-ballast.fr/", "rss": "https://www.revue-ballast.fr/feed/" },
+    { "name": "Basta!", "category": "News & Current Affairs", "website": "https://basta.media/", "rss": "https://basta.media/spip.php?page=backend" },
+    { "name": "Blast", "category": "News & Current Affairs", "website": "https://www.blast-info.fr/", "rss": "https://api.blast-info.fr/rss.xml" },
+    { "name": "CQFD", "category": "News & Current Affairs", "website": "https://cqfd-journal.org/", "rss": "https://cqfd-journal.org/spip.php?page=backend" },
+    { "name": "Dialectik Football", "category": "Specialized Coverage", "website": "http://dialectik-football.info/", "rss": "http://dialectik-football.info/feed/" },
+    { "name": "Disclose", "category": "News & Current Affairs", "website": "https://disclose.ngo/", "rss": "https://disclose.ngo/feed" },
+    { "name": "Factuel.info", "category": "News & Current Affairs", "website": "http://factuel.info/", "rss": "https://www.factuel.info/feed" },
+    { "name": "Imagine demain le monde", "category": "Specialized Coverage", "website": "https://www.imagine-magazine.com/", "rss": "" },
+    { "name": "Jef klak", "category": "Format & Style", "website": "https://www.jefklak.org/", "rss": "http://jefklak.org/?feed=rss2" },
+    { "name": "Journal de l’énergie", "category": "Specialized Coverage", "website": "https://journaldelenergie.com/", "rss": "https://journaldelenergie.com/feed" },
+    { "name": "L’âge de faire", "category": "Specialized Coverage", "website": "https://lagedefaire-lejournal.fr/", "rss": "https://lagedefaire-lejournal.fr/feed/" },
+    { "name": "L’Alterpresse68", "category": "News & Current Affairs", "website": "https://www.alterpresse68.info/", "rss": "https://www.alterpresse68.info/feed/" },
+    { "name": "Next Inpact", "category": "Specialized Coverage", "website": "https://next.ink/", "rss": "https://next.ink/feed/free" },
+    { "name": "Reporterre", "category": "Specialized Coverage", "website": "https://reporterre.net/", "rss": "https://reporterre.net/spip.php?page=backend-simple" },
+    { "name": "Socialter", "category": "Analysis & Commentary", "website": "https://www.socialter.fr/", "rss": "https://www.socialter.fr/rss" },
+    { "name": "StreetPress", "category": "Specialized Coverage", "website": "https://www.streetpress.com/", "rss": "https://backend.streetpress.com/rss.xml" },
+    { "name": "Zélium", "category": "Format & Style", "website": "https://www.zelium.info", "rss": "https://www.zelium.info/feed/" }
+];
+
+        mediaData.forEach(media => {
+    const li = document.createElement("li");
+    li.className = "media-item";
+    li.innerHTML = `
+        <strong>${media.name}</strong> - ${media.category} <br>
+        <div class="links">
+            <a href="${media.website}" target="_blank">Site web</a>
+            ${media.rss ? `<a href="${media.rss}" target="_blank">Flux rss</a>` : ''}
+        </div>
+    `;
+    mediaList.appendChild(li);
+});
+    });
+</script>
 </body>
 </html>

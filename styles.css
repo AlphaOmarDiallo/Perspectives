@@ -1,34 +1,136 @@
-<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        .media-list {
-            list-style: none;
-            padding: 0;
-        }
-        .media-item {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .media-item:last-child {
-            border-bottom: none;
-        }
-        .media-item a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-    </style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+}
+
+/* Container */
+.container {
+    max-width: 90%;
+    width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Center Header Elements */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+/* Typography */
+h1 {
+    text-align: center;
+    font-size: 1.8em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.4em; /* Reduced from 1.8em */
+    font-weight: normal; /* Optional: makes it look less prominent */
+}
+
+p {
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Media List */
+.media-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.media-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.media-item:last-child {
+    border-bottom: none;
+}
+
+.media-item .links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.media-item a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.media-item a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #7CB9E8; /* Light blue that's readable on dark backgrounds */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+footer a:hover {
+    color: #00BFFF; /* Brighter blue on hover */
+    text-decoration: underline;
+}
+
+/* RESPONSIVENESS */
+
+/* ✅ Make text smaller for mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+/* ✅ Adjust for very small screens */
+@media (max-width: 480px) {
+    .media-item {
+        padding: 10px;
+    }
+    .media-item a {
+        font-size: 0.9em;
+    }
+}
