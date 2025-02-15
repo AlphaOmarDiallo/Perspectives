@@ -1,0 +1,34 @@
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .media-list {
+            list-style: none;
+            padding: 0;
+        }
+        .media-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .media-item:last-child {
+            border-bottom: none;
+        }
+        .media-item a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
