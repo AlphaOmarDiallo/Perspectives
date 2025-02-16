@@ -38,3 +38,5 @@ Ce projet est sous licence MIT.
 
 ## Auteur
 [Alpha Omar Diallo](https://alphaomardiallo.com)
+
+![Project Logo](./assets/images/logo_perspective.webp)
