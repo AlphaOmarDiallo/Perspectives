@@ -30,6 +30,9 @@ Aucune installation n'est requise. Pour utiliser le site, il suffit d'ouvrir le 
 ## Contributions
 Les contributions sont les bienvenues ! Vous pouvez proposer des ajouts de nouveaux médias libres, améliorer le design ou ajouter des fonctionnalités.
 
+## Tracking tool
+https://counter.dev/
+
 ## Licence
 Ce projet est sous licence MIT.
 
